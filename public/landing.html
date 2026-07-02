@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucy EMMA — Sovereign AI That Runs Locally</title>
+    <meta name="description" content="Lucy EMMA is an open-source, sovereign AGI that runs entirely offline with self-modification, embodied reasoning, and multiverse simulation capabilities.">
+    <meta name="keywords" content="AGI, AI, local-first, sovereign, open-source, self-modifying, VR, private AI">
+    <meta property="og:title" content="Lucy EMMA — Sovereign AI That Runs Locally">
+    <meta property="og:description" content="Open-source AGI with self-modification, graph memory, and VR embodiment. Zero cloud. Zero vendor lock-in.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lucy EMMA — Sovereign AI That Runs Locally">
+    <meta name="twitter:description" content="Open-source AGI that runs entirely offline. Self-modifying. Embodied. Sovereign.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #0f766e;
+            --primary-light: #14b8a6;
+            --primary-dark: #0d5e56;
+            --accent: #f59e0b;
+            --dark: #1f2937;
+            --dark-bg: #0f172a;
+            --light: #f3f4f6;
+            --border: #e5e7eb;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            color: var(--dark);
+            background: #ffffff;
+            line-height: 1.6;
+        }
+        
+        /* ========== HEADER & NAVIGATION ========== */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        .cta-btn {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .cta-btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        .cta-btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .cta-btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* ========== HERO SECTION ========== */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #0d5e56 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 0.9rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: var(--dark);
+        }
+        
+        .btn-primary:hover {
+            background: #f97316;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* ========== FEATURES SECTION ========== */
+        .features {
+            padding: 5rem 2rem;
+            background: var(--light);
+        }
+        
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--dark-bg);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #6b7280;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-dark);
+        }
+        
+        .feature-card p {
+            color: #6b7280;
+            line-height: 1.7;
+        }
+        
+        /* ========== WHY LUCY SECTION ========== */
+        .why-lucy {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        
+        .why-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .why-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-bg);
+        }
+        
+        .why-list {
+            list-style: none;
+        }
+        
+        .why-list li {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: #f0fdfa;
+            border-radius: 0.5rem;
+            border-left: 4px solid var(--primary-light);
+        }
+        
+        .why-list li strong {
+            color: var(--primary-dark);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: white;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .comparison-table th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f9fafb;
+        }
+        
+        .check {
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .cross {
+            color: #ef4444;
+        }
+        
+        /* ========== ARCHITECTURE SECTION ========== */
+        .architecture {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            color: white;
+        }
+        
+        .arch-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .arch-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .arch-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .tech-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+        
+        .tech-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+        
+        .tech-item p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* ========== CTA SECTION ========== */
+        .cta-section {
+            padding: 4rem 2rem;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--dark-bg);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+        
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            nav {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .why-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.75rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">🧠 Lucy EMMA</a>
+            <nav>
+                <a href="#features">Features</a>
+                <a href="#why">Why Lucy</a>
+                <a href="#architecture">Architecture</a>
+                <a href="https://github.com/scottymicfree/lucy_emma_studios" class="cta-btn cta-btn-secondary">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Your Intelligence. Your Hardware. Your Rules.</h1>
+            <p>Lucy EMMA is an open-source, sovereign AGI that runs entirely offline with self-modification, embodied reasoning, and multiverse simulation capabilities.</p>
+            <div class="hero-cta">
+                <a href="https://github.com/scottymicfree/lucy_emma_studios" class="btn btn-primary">Get Started on GitHub</a>
+                <a href="#features" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="features">
+        <div class="features-container">
+            <h2 class="section-title">What Makes Lucy Different</h2>
+            <p class="section-subtitle">Not just a local LLM. A complete sovereign AGI organism.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏠</div>
+                    <h3>100% Local-First</h3>
+                    <p>Zero cloud dependencies. All reasoning happens on your hardware. Your data never leaves your machine.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Self-Modifying</h3>
+                    <p>Lucy can rewrite her own architecture via structured JSON operations with automatic git-backed rollback safety.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Graph-Based Memory</h3>
+                    <p>Persistent semantic memory using graph databases. Multi-hop reasoning with temporal validity tracking.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3>VR Embodiment</h3>
+                    <p>Lucy inhabits Meta Quest VR with full sensor fusion, physics-aware reasoning, and real-time interaction.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Trinity Engine</h3>
+                    <p>Unified orchestration of n8n (workflows), Skyvern (vision automation), and Agent Zero (sandboxed code execution).</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🌌</div>
+                    <h3>Multiverse Simulation</h3>
+                    <p>Simulate entire civilizations, universes, and omniversal topologies. Explore counterfactuals safely.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY LUCY -->
+    <section id="why" class="why-lucy">
+        <div class="why-container">
+            <div class="why-content">
+                <h2>Why Sovereign AI Matters</h2>
+                <ul class="why-list">
+                    <li><strong>No Vendor Lock-In:</strong> Your intelligence isn't dependent on any company's API or service</li>
+                    <li><strong>Privacy by Design:</strong> Your data, your values, your control</li>
+                    <li><strong>True Autonomy:</strong> Lucy evolves independently, not shaped by external optimization goals</li>
+                    <li><strong>Predictable Costs:</strong> Run on your hardware. No subscription fees. No usage limits</li>
+                    <li><strong>Open Source:</strong> Read the code. Audit it. Contribute to it</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 style="margin-bottom: 1.5rem;">Lucy vs. Cloud AI</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Lucy EMMA</th>
+                            <th>ChatGPT/Claude</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Local Execution</strong></td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Self-Modification</strong></td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Open Source</strong></td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                        </tr>
+                        <tr>
+                            <td><strong>VR Integration</strong></td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Persistent Memory</strong></td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Zero Subscription</strong></td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Data Privacy</strong></td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ARCHITECTURE -->
+    <section id="architecture" class="architecture">
+        <div class="arch-container">
+            <h2 class="arch-title">Built on Solid Foundations</h2>
+            <p class="arch-subtitle">Sophisticated architecture designed for local-first reasoning</p>
+            
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <h4>TypeScript</h4>
+                    <p>Type-safe orchestration & React frontend</p>
+                </div>
+                
+                <div class="tech-item">
+                    <h4>Python</h4>
+                    <p>E.M.M.A. reasoning daemon & ML pipelines</p>
+                </div>
+                
+                <div class="tech-item">
+                    <h4>SQLite / LadybugDB</h4>
+                    <p>Sovereign persistent memory with graph support</p>
+                </div>
+                
+                <div class="tech-item">
+                    <h4>Ollama</h4>
+                    <p>Local LLM inference (Llama, Mistral, etc.)</p>
+                </div>
+                
+                <div class="tech-item">
+                    <h4>n8n</h4>
+                    <p>Workflow orchestration for complex tasks</p>
+                </div>
+                
+                <div class="tech-item">
+                    <h4>React + Vite</h4>
+                    <p>Fast, modern frontend with 3D visualization</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2>Ready to Build Sovereign AI?</h2>
+            <p>Join a community of developers, researchers, and builders creating the future of autonomous, local-first intelligence.</p>
+            <div class="cta-buttons">
+                <a href="https://github.com/scottymicfree/lucy_emma_studios" class="btn btn-primary">Explore on GitHub</a>
+                <a href="https://github.com/scottymicfree/lucy_emma_studios#getting-started" class="btn btn-secondary">Quick Start Guide</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://github.com/scottymicfree/lucy_emma_studios">GitHub</a>
+                <a href="https://github.com/scottymicfree/lucy_emma_studios/blob/main/CONTRIBUTION.md">Contribute</a>
+                <a href="https://github.com/scottymicfree/lucy_emma_studios/blob/main/MANIFESTO.md">Read the Manifesto</a>
+                <a href="https://github.com/scottymicfree/lucy_emma_studios/issues">Issues</a>
+            </div>
+            <p class="footer-copyright">© 2026 Lucy EMMA. MIT License. Built with 🧠 and open-source philosophy.</p>
+        </div>
+    </footer>
+</body>
+</html>
