@@ -1,0 +1,12 @@
+{
+  "name": "Lucy & Emma Control Studio",
+  "description": "A production-grade cognitive orchestration platform featuring 137-node visualization, secure toolbelt execution, and versioned handbook management.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
