@@ -1,0 +1,125 @@
+[
+  {
+    "id": "system_reboot",
+    "name": "System Reboot",
+    "description": "Perform a soft reboot of the cognitive core without flushing long-term memory.",
+    "category": "system",
+    "riskLevel": "high",
+    "permissions": ["admin", "secure_kernel"],
+    "version": "1.0.0"
+  },
+  {
+    "id": "flush_memory",
+    "name": "Memory Flush",
+    "description": "Clear short-term spatial arrays to resolve fragmentation.",
+    "category": "maintenance",
+    "riskLevel": "low",
+    "permissions": ["operator"],
+    "version": "1.2.0"
+  },
+  {
+    "id": "enable_debug",
+    "name": "Toggle Diagnostic Tracing",
+    "description": "Enable deep trace monitoring of neural routing paths.",
+    "category": "diagnostic",
+    "riskLevel": "medium",
+    "permissions": ["operator"],
+    "version": "1.0.5"
+  },
+  {
+    "id": "bounded_blast_radius",
+    "name": "Bounded Blast-Radius Tracing",
+    "description": "Trace downstream dependency paths and vulnerability cascades from a selected infrastructure node.",
+    "category": "security",
+    "riskLevel": "high",
+    "permissions": ["operator"],
+    "version": "1.0.0",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "target_node_id": {
+          "type": "string",
+          "label": "Target Node ID",
+          "placeholder": "Core Substation LP1",
+          "default": "Core Substation LP1"
+        }
+      },
+      "required": ["target_node_id"]
+    }
+  },
+  {
+    "id": "cross_layer_geo_semantic",
+    "name": "Cross-Layer Geo-Semantic Intersection",
+    "description": "Intersect localized weather/meteorological alerts with physical infrastructure layers.",
+    "category": "diagnostic",
+    "riskLevel": "medium",
+    "permissions": ["operator"],
+    "version": "1.0.0",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "sector_name": {
+          "type": "string",
+          "label": "Sector Name",
+          "placeholder": "Fenton, MO",
+          "default": "Fenton, MO"
+        },
+        "event_id": {
+          "type": "string",
+          "label": "Event ID",
+          "placeholder": "flood-12",
+          "default": "flood-12"
+        }
+      },
+      "required": ["sector_name", "event_id"]
+    }
+  },
+  {
+    "id": "shortest_path_network",
+    "name": "Shortest Path Network Analytics",
+    "description": "Perform shortest path analysis between utility provider and critical target node.",
+    "category": "diagnostic",
+    "riskLevel": "medium",
+    "permissions": ["operator"],
+    "version": "1.0.0",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "provider_name": {
+          "type": "string",
+          "label": "Provider Name",
+          "placeholder": "Missouri River Utility Group",
+          "default": "Missouri River Utility Group"
+        },
+        "target_node_id": {
+          "type": "string",
+          "label": "Target Node ID",
+          "placeholder": "Fenton Water Filtration Plant",
+          "default": "Fenton Water Filtration Plant"
+        }
+      },
+      "required": ["provider_name", "target_node_id"]
+    }
+  },
+  {
+    "id": "schema_path_extractor",
+    "name": "Schema-Guided Ingestion Pathway",
+    "description": "Ingest unstructured inputs and align them with the rigid structural ontology using SchemaLLMPathExtractor.",
+    "category": "automation",
+    "riskLevel": "low",
+    "permissions": ["operator"],
+    "version": "1.0.0",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "textarea",
+          "label": "Unstructured Text Context",
+          "placeholder": "Enter situation report, email, or meteorological flash alert...",
+          "default": "Heavy storm and flash floods warning in Fenton, MO might compromise primary water filtration plant. Substation LP1 is online."
+        }
+      },
+      "required": ["text"]
+    }
+  }
+]
