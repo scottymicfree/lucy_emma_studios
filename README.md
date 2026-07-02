@@ -1,6 +1,7 @@
 # Lucy AI Core
 
 ## Overview
+<img width="1024" height="1536" alt="Copilot_20260702_011059" src="https://github.com/user-attachments/assets/a977b4ab-e74e-4af7-88e5-1acac7f72f44" />
 
 Lucy is an independent artificial general intelligence core, operating as a sovereign, local-first, human-aligned intelligence.
 
