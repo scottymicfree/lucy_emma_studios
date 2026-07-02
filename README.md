@@ -2,7 +2,7 @@
 
 ## Overview
 <img width="1024" height="1536" alt="Copilot_20260702_011059" src="https://github.com/user-attachments/assets/a977b4ab-e74e-4af7-88e5-1acac7f72f44" />
-
+<iframe src="https://docs.google.com/document/d/e/2PACX-1vSQrEg0msfMSoKRWkwaNdVUAqCojog8m52EzyTYsdQVz-LA9R2m80mCR0-vQfTWAmYfWEBTGyYMtF90/pub?embedded=true"></iframe>
 Lucy is an independent artificial general intelligence core, operating as a sovereign, local-first, human-aligned intelligence.
 
 ## Recent Updates
